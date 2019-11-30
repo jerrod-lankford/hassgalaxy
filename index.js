@@ -14,12 +14,12 @@ app.use(express.static('assets'));
 app.use(bodyParser.json());
 
 app.get('/:name', (req, res) => {
-    const name = req.params.name;
+    const name = req.params.name.toLowerCase();
     res.render('home', {name});
 });
 
 app.post('/:name', (req, res) => {
-  const name = req.params.name;
+  const name = req.params.name.toLowerCase();
   const socket = sockets[name];
   const {server, token} = req.body;
   if (!socket) {
@@ -36,7 +36,7 @@ app.post('/:name', (req, res) => {
 wss.on('connection', function connection(ws) {
   ws.on('message', function incoming(message) {
     if (message.startsWith("id:")) {
-      const id = message.split(":")[1].trim();
+      const id = message.split(":")[1].trim().toLowerCase();
       sockets[id] = ws;
       console.log(`New socket created: ${id}`);
       ws.on('close', () => {
