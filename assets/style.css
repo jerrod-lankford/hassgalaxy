@@ -1,0 +1,39 @@
+.main-container {
+    margin: 15px;
+}
+
+.send-button {
+    margin-top: 10px;
+}
+
+.server-name {
+    width: 300px;
+}
+
+.token-label {
+    margin-top: 10px;
+}
+
+.nav-image {
+    margin-right: 10px;
+}
+
+.info-footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid rgb(181, 178, 177, .1);
+    padding-top: 1rem;
+}
+
+.token-label:after {
+    padding-left: 2px;
+    content:"*";
+    color:red;
+  }
+
+/* Bootstrap overrides */
+.navbar {
+    padding: 0;
+}
