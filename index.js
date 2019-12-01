@@ -1,11 +1,13 @@
 const WebSocket = require('ws');
 const express = require('express');
+const http = require('http');
 const exphbs  = require('express-handlebars');
 const bodyParser = require('body-parser');
 
 const PORT = process.env.PORT || 3000;
-const wss = new WebSocket.Server({ port: 8080 });
 const app = express();
+const server = http.createServer(app);
+const wss = new WebSocket.Server({server});
 const sockets = {};
 
 app.engine('handlebars', exphbs());
@@ -51,5 +53,5 @@ wss.on('connection', function connection(ws) {
   });
 });
 
-app.listen(PORT);
+server.listen(PORT);
 console.log(`Listening on port ${PORT}...`);
