@@ -15,7 +15,11 @@ app.use(bodyParser.json());
 
 app.get('/:name', (req, res) => {
     const name = req.params.name.toLowerCase();
-    res.render('home', {name});
+    if (sockets[name]) {
+      res.render('home', { name });
+    } else {
+      res.render('404', { name });
+    }
 });
 
 app.post('/:name', (req, res) => {
