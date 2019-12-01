@@ -44,6 +44,10 @@
     padding: 10px;
 }
 
+.index-content {
+    padding: 10px;
+}
+
 /* Bootstrap overrides */
 .navbar {
     padding: 0;

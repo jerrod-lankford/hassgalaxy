@@ -15,6 +15,10 @@ app.set('view engine', 'handlebars');
 app.use(express.static('assets'));
 app.use(bodyParser.json());
 
+app.get('/', (req, res) => {
+  res.render('index');
+});
+
 app.get('/:name', (req, res) => {
     const name = req.params.name.toLowerCase();
     if (sockets[name]) {
