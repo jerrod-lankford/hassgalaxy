@@ -48,3 +48,4 @@ wss.on('connection', function connection(ws) {
 });
 
 app.listen(PORT);
+console.log(`Listening on port ${PORT}...`);

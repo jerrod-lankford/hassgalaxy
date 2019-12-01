@@ -31,7 +31,13 @@
     padding-left: 2px;
     content:"*";
     color:red;
-  }
+}
+
+.nav-id {
+    padding-right: 5px;
+    font-size: 20px;
+    font-weight: 500;
+}
 
 /* Bootstrap overrides */
 .navbar {

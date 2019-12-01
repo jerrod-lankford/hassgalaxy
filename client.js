@@ -1,6 +1,6 @@
 const WebSocket = require('ws');
 
-const ws = new WebSocket('ws://localhost:8080', {
+const ws = new WebSocket('ws://104.186.149.75:8080', {
   perMessageDeflate: false
 });
 
