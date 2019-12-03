@@ -43,6 +43,11 @@ app.post('/:name', (req, res) => {
   }
 });
 
+// ssl route
+app.get('/.well-known/acme-challenge/7vBK3oNjiotLGPlrqtOMKG7gKYHMHU_XGLEGHLDTa5Q', (req, res) => {
+  res.send('7vBK3oNjiotLGPlrqtOMKG7gKYHMHU_XGLEGHLDTa5Q.r55yryYu5PWXFU75NIVYt0_KaNoKHShqsBjD3LqX8aM');
+});
+
 wss.on('connection', function connection(ws) {
   ws.on('message', function incoming(message) {
     if (message.startsWith("id:")) {
