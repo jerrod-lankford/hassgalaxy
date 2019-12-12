@@ -57,6 +57,10 @@ wss.on('connection', function connection(ws) {
       ws.on('close', () => {
         console.log(`Socket ${id} closed and deleted`);
         delete sockets[id];
+      });
+
+      ws.on('error', (err) => {
+        console.log(`Web socket error ${err}`);
       })
     }
   });
